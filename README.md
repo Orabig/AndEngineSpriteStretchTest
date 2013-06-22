@@ -3,6 +3,6 @@ AndEngineSpriteStretchTest
 
 Test project for SpriteStrech Demonstration
 
-The main project is [`AndEngineSpriteTest`][URI_AndEngineSpriteTest]
+The main project is [`AndEngineSprite`][URI_AndEngineSprite]
 
-[URI_AndEngineSpriteTest]: https://github.com/Orabig/AndEngineSpriteStretch
+[URI_AndEngineSprite]: https://github.com/Orabig/AndEngineSpriteStretch
