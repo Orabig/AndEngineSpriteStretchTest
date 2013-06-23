@@ -17,9 +17,7 @@ import com.crocoware.andengine.entity.sprite.stretch.StretchSprite;
  */
 public class StretchSampleScene extends Scene {
 
-
-	public StretchSampleScene(Engine engine,
-			TiledTextureRegion textureRegion,
+	public StretchSampleScene(Engine engine, TiledTextureRegion textureRegion,
 			TextureRegion textureRegion2) {
 
 		test1 = new PerspectiveSprite(200, 600, 128, 128,
@@ -28,11 +26,9 @@ public class StretchSampleScene extends Scene {
 		test2 = new StretchSprite(400, 600, 128, 128,
 				textureRegion.getTextureRegion(8),
 				engine.getVertexBufferObjectManager(), DrawType.STATIC);
-		test3 = new StretchSprite(200, 300, 128, 128,
-				textureRegion2,
+		test3 = new StretchSprite(200, 300, 128, 128, textureRegion2,
 				engine.getVertexBufferObjectManager(), DrawType.STATIC);
-		test4 = new StretchSprite(400, 300, 128, 128,
-				textureRegion2,
+		test4 = new StretchSprite(400, 300, 128, 128, textureRegion2,
 				engine.getVertexBufferObjectManager(), DrawType.STATIC);
 		attachChild(test1);
 		attachChild(test2);
@@ -67,7 +63,25 @@ public class StretchSampleScene extends Scene {
 		test3.setStretchX(pinchX);
 		test3.setStretchY(pinchY);
 
-		test4.setStretchX(pinchX);
+		// Sprite 4 will turn slowly
+		double a1 = 3*Math.PI/4;//t/5;
+		double a2 = a1 + Math.PI / 2;
+		double a3 = a2 + Math.PI / 2;
+		double a4 = a3 + Math.PI / 2;
+		a2 += Math.PI / 6 * Math.sin(t);
+		a3 += Math.PI / 6 * Math.cos(t);
+		float xc = 400;
+		float yc = 300;
+		float R = 150;
+		float x1 = xc + R * (float) Math.cos(a1);
+		float y1 = yc + R * (float) Math.sin(a1);
+		float x2 = xc + R * (float) Math.cos(a2);
+		float y2 = yc + R * (float) Math.sin(a2);
+		float x3 = xc + R * (float) Math.cos(a3);
+		float y3 = yc + R * (float) Math.sin(a3);
+		float x4 = xc + R * (float) Math.cos(a4);
+		float y4 = yc + R * (float) Math.sin(a4);
+		test4.setPosition(x1, y1, x2, y2, x3, y3, x4, y4);
 	}
 
 }
