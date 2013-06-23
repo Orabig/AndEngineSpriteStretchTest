@@ -64,7 +64,7 @@ public class StretchSampleScene extends Scene {
 		test3.setStretchY(pinchY);
 
 		// Sprite 4 will turn slowly
-		double a1 = 3*Math.PI/4;//t/5;
+		double a1 = t/5;//Math.PI/4;//3*Math.PI/4;//t/5;
 		double a2 = a1 + Math.PI / 2;
 		double a3 = a2 + Math.PI / 2;
 		double a4 = a3 + Math.PI / 2;
@@ -81,6 +81,7 @@ public class StretchSampleScene extends Scene {
 		float y3 = yc + R * (float) Math.sin(a3);
 		float x4 = xc + R * (float) Math.cos(a4);
 		float y4 = yc + R * (float) Math.sin(a4);
+		test4.setFlipped(false,true);
 		test4.setPosition(x1, y1, x2, y2, x3, y3, x4, y4);
 	}
 
