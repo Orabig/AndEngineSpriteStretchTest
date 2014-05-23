@@ -16,17 +16,15 @@ import android.view.Display;
 public class MainActivity extends SimpleBaseGameActivity {
 	private Camera mCamera;
 
-	@SuppressWarnings("deprecation")
 	@Override
 	public EngineOptions onCreateEngineOptions() {
 
-		final Display display = getWindowManager().getDefaultDisplay();
-		int cameraWidth = display.getWidth();
-		int cameraHeight = display.getHeight();
+		int cameraWidth = 800;
+		int cameraHeight = 480;
 
 		mCamera = new Camera(0, 0, cameraWidth, cameraHeight);
 
-		return new EngineOptions(true, ScreenOrientation.PORTRAIT_FIXED,
+		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_FIXED,
 				new RatioResolutionPolicy(cameraWidth, cameraHeight), mCamera);
 	}
 
